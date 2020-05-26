@@ -11,21 +11,11 @@ form.addEventListener('submit', (e) => {
     msg1.textContent = 'Loading..';
     msg2.textContent = '';
 
-    var place = `http://localhost:3000/weather?address=${input.value}`;
+    var place = `/weather?address=${input.value}`;
 
     fetch(place).then((response) => {
         response.json().then((data) => {
-            // if(!place.trim()) {
-            //     msg1.textContent = "";
-                
-            // }
-
-            // else{
-
-            //     msg1.innerHTML = `<h2>${data.temperature}</h2>`;
-            // }
-
-            
+        
 
             if(data) {
                 msg1.innerHTML = `<h2>${data.temperature}</h2>`;

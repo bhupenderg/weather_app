@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+
+const port = process.env.PORT || 3000;
 const path = require('path');
 
 const request = require('postman-request');
@@ -75,4 +77,6 @@ app.get('*', (req, res) => {
 
 
 
-app.listen(3000);
+app.listen(port, () => {
+    console.log("Server runs on port no. " + port);
+});
